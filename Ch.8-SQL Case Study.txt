@@ -199,6 +199,9 @@ ORDER BY m.surname, m.firstname
  SELECT f.name, COUNT( b.bookid )
 FROM Facilities AS f
 INNER JOIN Bookings AS b ON f.facid = b.facid
+INNER JOIN Bookings AS b ON f.facid = b.facid
+INNER JOIN Members AS m ON m.memid = b.memid
+WHERE m.memid !=0
 GROUP BY f.name
 
 ------------------------------------------------------------------------
